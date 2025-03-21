@@ -1,23 +1,26 @@
 import { createElement } from "react";
 import "./index.css"
 import { createRoot } from "react-dom/client";
-import App from "./App";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-const categories = [
-    "electrics",
-    "clothes",
-    "shoes",
-    "computers",
-    "books",
+import router from "./routes/router";
 
-]
+// const categories = [
+//     "electrics",
+//     "clothes",
+//     "shoes",
+//     "computers",
+//     "books",
+
+// ]
 
 
 // const app = createElement("div",{id:"category-section", className:"p-4"},createElement("p",{className:"text-2xl text-gray-500"},"Product Categories"),createElement("div",null,categories.map((category) => createElement("button",{className:"bg-gray-500 text-white p-2 m-2 rounded"},category))));
 
+const root = document.querySelector("#root");
 
 
-createRoot(root).render(App());
+createRoot(root).render(<RouterProvider router={router}/>);
 
 
 // const title = document.createElement("p");
